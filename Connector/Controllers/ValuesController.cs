@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -39,6 +40,36 @@ namespace Connector.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+        }
+
+
+        public DataTable GetLeads()
+        {
+            DataTable myTable = new DataTable();
+            // Betty Code
+
+            // Get Token
+            // Get A list of Objects List<LeadJson>
+            // Create a Data Table based on your List<LeadJson>
+
+
+            DataTable leadTable = new DataTable();
+            leadTable.Clear();
+
+            //Columns
+            leadTable.Columns.Add("id");
+            leadTable.Columns.Add("status");
+
+
+            // foreach item in your list
+            DataRow row = leadTable.NewRow();
+            row["id"] = "ravi";
+            row["status"] = "500";
+            leadTable.Rows.Add(row);
+
+
+            //
+            return myTable;
         }
     }
 }
